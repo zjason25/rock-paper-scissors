@@ -15,41 +15,54 @@ function getComputerChoice() {
 
 function playRound(playerChoice) {
   let botChoice = getComputerChoice();
-  console.log(`The bot played ${botChoice}`);
-  console.log(`You played ${playerChoice}`);
+  const res = document.querySelector("#results");
+  const player = document.querySelector("#human");
+  const computer = document.querySelector("#computer");
+  const score = document.querySelector("#scores");
+  score.textContent = `You: ${humanScore}. Bot: ${computerScore}`;
+  player.textContent = `You played ${playerChoice}`;
+  computer.textContent = `Bot player ${botChoice}`;
+
 
   if (botChoice == playerChoice) {
-    console.log("It's a tie");
+    res.textContent = "It's a tie";
   }
   else if (botChoice == "rock") {
     if (playerChoice == "paper") {
-      console.log("You win this round");
+      res.textContent = "You win this round";
       humanScore += 1;
     }
     else if (playerChoice == "scissors") {
-      console.log("The bot wins this round");
+      res.textContent = "The bot wins this round";
       computerScore += 1;
     }
   }
   else if (botChoice == "paper") {
     if (playerChoice == "scissors") {
-      console.log("You win this round");
+      res.textContent = "You win this round";
       humanScore += 1;
     }
     else if (playerChoice == "rock") {
-      console.log("The bot wins this round");
+      res.textContent = "The bot wins this round";
       computerScore += 1;
     }
   }
   else if (botChoice == "scissors") {
     if (playerChoice == "rock") {
-      console.log("You win this round");
+      res.textContent = "You win this round";
       humanScore += 1;
     }
     else if (playerChoice == "paper") {
-      console.log("The bot wins this round");
+      res.textContent = "The bot wins this round";
       computerScore += 1;
     }
+  }
+
+  if (humanScore == 5) {
+    res.textContent = "You win the game!";
+  }
+  else if (computerScore == 5) {
+    res.textContent = "Bot wins the game.";
   }
 }
 
