@@ -25,9 +25,8 @@ function getHumanChoice() {
   return choice;
 }
 
-function playRound() {
+function playRound(playerChoice) {
   let botChoice = getComputerChoice();
-  let playerChoice = getHumanChoice();
   console.log(`The bot played ${botChoice}`);
   console.log(`You played ${playerChoice}`);
 
@@ -89,4 +88,11 @@ function playGame() {
 let humanScore = 0;
 let computerScore = 0;
 
-playGame();
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    playRound(button.id);
+  });
+});
+
+// playGame();
