@@ -65,26 +65,6 @@ function playRound(playerChoice) {
   }
 }
 
-function playGame() {
-  let round = 1;
-  while (round <= 5) {
-    console.log(`[Round ${round}]\n`);
-    playRound();
-    round += 1;
-  }
-  if (humanScore == computerScore) {
-    console.log("Tie game!");
-  }
-  else if (humanScore < computerScore) {
-    console.log("The bot wins the game!");
-  }
-  else {
-    console.log("You win the game!");
-  }
-
-  console.log("Good game, all :)");
-}
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -94,5 +74,3 @@ buttons.forEach((button) => {
     playRound(button.id);
   });
 });
-
-// playGame();
