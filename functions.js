@@ -13,18 +13,6 @@ function getComputerChoice() {
   return choice;
 }
 
-function getHumanChoice() {
-  let input = prompt("Enter your choice", "");
-  let choice = input.toLowerCase();
-
-  while (choice != "rock" && choice != "paper" && choice != "scissors") {
-    input = prompt("Invalid choice. Try again", "");
-    choice = input.toLowerCase();
-  }
-
-  return choice;
-}
-
 function playRound(playerChoice) {
   let botChoice = getComputerChoice();
   console.log(`The bot played ${botChoice}`);
