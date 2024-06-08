@@ -19,7 +19,6 @@ function playRound(playerChoice) {
   const player = document.querySelector("#human");
   const computer = document.querySelector("#computer");
   const score = document.querySelector("#scores");
-  score.textContent = `You: ${humanScore}. Bot: ${computerScore}`;
   player.textContent = `You played ${playerChoice}`;
   computer.textContent = `Bot player ${botChoice}`;
 
@@ -64,6 +63,8 @@ function playRound(playerChoice) {
   else if (computerScore == 5) {
     res.textContent = "Bot wins the game.";
   }
+  score.textContent = `You: ${humanScore}. Bot: ${computerScore}`;
+
 }
 
 let humanScore = 0;
